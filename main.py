@@ -26,10 +26,14 @@ ai_options = {
     "Copilot (not selectable)": "images/Copiolet-logo.png"
 }
 
+# Define the format for each option with a small image
+def format_option(option):
+    return f'<img src="{ai_options[option]}" width="20"/> {option}'
+
 selected_ai = st.selectbox(
     "Choose an AI model",
     options=[key for key in ai_options.keys()],
-    format_func=lambda x: f"{x} - {'(not selectable)' if 'not selectable' in x else ''}"
+    format_func=format_option
 )
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
