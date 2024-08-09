@@ -15,6 +15,9 @@ st.set_page_config(
     layout="centered",  # Page layout option
 )
 
+# Display the logo at the top left corner
+st.sidebar.image("images/M-ONE.png", use_column_width=True)
+
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Set up Google Gemini-Pro AI model
